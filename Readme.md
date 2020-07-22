@@ -7,6 +7,10 @@ Una aplicación que empecé a desarrollar para afianzar más los conocimientos o
 Tras tener una versión utilizable y bonita la dejé a un lado para curiosear otras cosas. Alomejor la voy modificando con el tiempo, pero 
 se quedará como un proyecto de práctica seguramente.
 
+## Requisitos
+
+Al clonar el repositorio debe usarse JDK y JavaFX 8 en el BuildPath, además de comprobar que se usa el compilador 1.8 de Java.
+
 
 ## Construido con
 
