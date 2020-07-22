@@ -10,9 +10,9 @@ se quedará como un proyecto de práctica seguramente.
 
 ## Construido con
 
-Eclipse IDE
-JDK 8
-JavaFX 8
-SceneBuilder 11
+Eclipse IDE<br/>
+JDK 8<br/>
+JavaFX 8<br/>
+SceneBuilder 11<br/>
 
 
