@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: rgb(67, 190, 255);" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.MainController">
+   <children>
+      <GridPane prefHeight="650.0" prefWidth="1000.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="72.0" minHeight="57.0" prefHeight="57.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="87.0" minHeight="72.0" prefHeight="87.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="105.0" minHeight="72.0" prefHeight="94.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="72.0" minHeight="39.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="72.0" minHeight="72.0" prefHeight="72.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="72.0" minHeight="72.0" prefHeight="72.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="72.0" minHeight="72.0" prefHeight="72.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="103.0" minHeight="72.0" prefHeight="103.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="72.0" minHeight="41.0" prefHeight="41.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane id="nav" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="0.0" GridPane.columnSpan="11">
+               <children>
+                  <Label layoutX="1.0" layoutY="15.0" text="CleanerFX" textFill="#000000da">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="search" layoutX="820.0" mnemonicParsing="false" onAction="#showSearch" prefHeight="54.0" prefWidth="60.0" styleClass="navBtn">
+                     <graphic>
+                        <FontAwesomeIconView fill="#00000099" glyphName="SEARCH" size="22" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="options" layoutX="880.0" mnemonicParsing="false" onAction="#showOptions" prefHeight="54.0" prefWidth="60.0" styleClass="navBtn">
+                     <graphic>
+                        <MaterialDesignIconView fill="#00000099" glyphName="SETTINGS" size="26" />
+                     </graphic>
+                  </Button>
+                  <Label fx:id="warningNumber" alignment="CENTER" layoutX="914.0" layoutY="11.0" minHeight="0.0" prefHeight="10.0" prefWidth="10.0" style="-fx-background-color: ORANGE; -fx-background-radius: 8;" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="about" layoutX="940.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" styleClass="navBtn">
+                     <graphic>
+                        <MaterialDesignIconView fill="#00000099" glyphName="HELP" size="22" />
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane id="scene" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="11" GridPane.rowIndex="1" GridPane.rowSpan="8">
+               <children>
+                  <ImageView fitHeight="578.0" fitWidth="1000.0" pickOnBounds="true" visible="false">
+                     <image>
+                        <Image url="@images/paisaje.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="routeName" layoutX="228.0" layoutY="65.0" onKeyReleased="#addPathKey" prefHeight="40.0" prefWidth="466.0" promptText="Add a new route to scan">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="addPath" layoutX="694.0" layoutY="65.0" mnemonicParsing="false" onAction="#addPath" prefHeight="40.0" prefWidth="79.0" styleClass="actionBtn" text="Añadir" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="panelAccion" GridPane.columnIndex="6" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.rowSpan="5">
+               <children>
+                  <Button fx:id="limpiar" disable="true" layoutX="132.0" layoutY="300.0" mnemonicParsing="false" onAction="#limpiar" prefHeight="40.0" prefWidth="100.0" styleClass="actionBtn" text="Limpiar" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="23.0" layoutY="185.0" prefHeight="94.0" prefWidth="318.0" style="-fx-background-color: WHITE;" styleClass="info" text="Elimina los archivos que no necesitas en tu equipo tras analizarlo." textAlignment="CENTER" textFill="#000000c6" wrapText="true">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="#0000005a" glyphName="TRASH_ALT" layoutX="143.0" layoutY="136.0" size="100" />
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="panelAccion" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.rowSpan="5">
+               <children>
+                  <ProgressIndicator fx:id="indAnalisis" layoutX="160.0" layoutY="131.0" prefHeight="40.0" prefWidth="40.0" progress="0.0" scaleX="6.0" scaleY="6.0">
+                     <effect>
+                        <ColorAdjust contrast="0.12" hue="-0.1" />
+                     </effect>
+                  </ProgressIndicator>
+                  <Circle fill="WHITE" layoutX="180.0" layoutY="97.0" radius="47.0" stroke="WHITE" strokeType="INSIDE" />
+                  <Label fx:id="fileCount" alignment="CENTER" layoutX="122.0" layoutY="79.0" prefHeight="36.0" prefWidth="115.0" textAlignment="CENTER" textFill="#35d4d7">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="25.0" />
+                     </font>
+                  </Label>
+                  <ProgressIndicator fx:id="loadAnalisis" layoutX="162.0" layoutY="77.0" prefHeight="40.0" prefWidth="40.0" scaleX="3.0" scaleY="3.0" visible="false">
+                     <effect>
+                        <ColorAdjust contrast="0.12" hue="-0.1" />
+                     </effect>
+                  </ProgressIndicator>
+                  <Label fx:id="infoAnalisis" alignment="CENTER" layoutX="23.0" layoutY="185.0" prefHeight="94.0" prefWidth="318.0" style="-fx-background-color: WHITE;" styleClass="info" text="Analiza tus rutas en busca de basura y mantén tu equipo limpio." textAlignment="CENTER" textFill="#000000c6" wrapText="true">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="analizar" layoutX="132.0" layoutY="300.0" mnemonicParsing="false" onAction="#analizar" prefHeight="40.0" prefWidth="100.0" styleClass="actionBtn" text="Analizar" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cancelar" layoutX="132.0" layoutY="300.0" mnemonicParsing="false" onAction="#stopScan" prefHeight="40.0" prefWidth="100.0" styleClass="actionBtn" text="Cancelar" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="Segoe UI" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <Pane fx:id="blend" layoutY="54.0" prefHeight="590.0" prefWidth="1000.0" style="-fx-background-color: rgb(0, 0, 0, .3);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0" />
+      <Pane fx:id="contentSearch" layoutY="60.0" prefHeight="590.0" prefWidth="350.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="650.0" AnchorPane.topAnchor="55.0">
+         <children>
+            <fx:include fx:id="searchController" prefHeight="595.0" source="searchView.fxml" />
+         </children>
+      </Pane>
+      <Pane fx:id="contentOptions" layoutX="636.0" layoutY="55.0" prefHeight="595.0" prefWidth="364.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="649.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+         <children>
+            <fx:include fx:id="settingsController" source="settingsView.fxml" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="590.0" prefWidth="350.0" style="-fx-background-color: rgb(67, 190, 255);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.SearchController">
+   <children>
+      <GridPane prefHeight="590.0" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="175.0" prefWidth="175.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="175.0" prefWidth="175.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="59.0" prefHeight="59.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="59.0" prefHeight="59.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="59.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="59.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="59.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="59.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="59.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="59.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="59.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+        </rowConstraints>
+         <children>
+            <Pane maxHeight="60.0" minHeight="59.0" prefHeight="60.0" prefWidth="350.0" style="-fx-background-color: rgb(67, 190, 255);" GridPane.columnSpan="2">
+               <children>
+                  <Label layoutY="15.0" text="File Finder" textFill="#ffffffd9">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WHITE;" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="5">
+               <children>
+                  <TextField fx:id="fileName" layoutX="41.0" layoutY="53.0" prefHeight="40.0" prefWidth="268.0" promptText="Which file are you searching for?">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutY="14.0" text="File name:" textFill="#000000cc">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="fileExtension" layoutX="41.0" layoutY="144.0" prefHeight="40.0" prefWidth="89.0" promptText=".exe, .txt, etc..." />
+                  <Label layoutX="4.0" layoutY="112.0" prefHeight="20.0" prefWidth="163.0" text="File extension:" textFill="#000000cc">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="167.0" layoutY="112.0" prefHeight="21.0" prefWidth="152.0" text="Where to Search:" textFill="#000000cc">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
+                  <CheckBox fx:id="cDisk" layoutX="209.0" layoutY="144.0" mnemonicParsing="false" text="C:" />
+                  <CheckBox fx:id="dDisk" layoutX="209.0" layoutY="166.0" mnemonicParsing="false" text="D:" />
+                  <TextField fx:id="customDisk" layoutX="267.0" layoutY="144.0" prefHeight="40.0" prefWidth="42.0" promptText="X:" />
+                  <CheckBox fx:id="isFolder" layoutX="244.0" layoutY="20.0" mnemonicParsing="false" text="Is folder" />
+                  <Button fx:id="startSearch" layoutX="71.0" layoutY="228.0" mnemonicParsing="false" onAction="#searchFile" prefHeight="40.0" prefWidth="79.0" styleClass="actionBtn" text="Search" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cancelSearch" layoutX="201.0" layoutY="228.0" mnemonicParsing="false" onAction="#cancelSearch" prefHeight="40.0" prefWidth="79.0" styleClass="actionBtn" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WHITE;" GridPane.columnSpan="2" GridPane.rowIndex="6" GridPane.rowSpan="4">
+               <children>
+                  <ProgressIndicator fx:id="analysisOff" layoutX="130.0" layoutY="-15.0" prefHeight="94.0" prefWidth="94.0" progress="0.0" scaleX="1.5" scaleY="1.5" translateX="-2.0" translateY="25.0">
+                     <effect>
+                        <ColorAdjust contrast="0.07" hue="-0.05" />
+                     </effect>
+                  </ProgressIndicator>
+                  <Circle fill="WHITE" layoutX="177.0" layoutY="19.0" radius="33.0" scaleX="1.5" scaleY="1.5" stroke="WHITE" strokeType="INSIDE" translateX="-2.0" translateY="25.0" />
+                  <Label fx:id="resultados" alignment="CENTER" layoutX="130.0" layoutY="26.0" prefHeight="36.0" prefWidth="94.0" textAlignment="CENTER" textFill="#43beff" translateX="-2.0">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="25.0" />
+                     </font>
+                  </Label>
+                  <ProgressIndicator fx:id="analysisOn" layoutX="141.0" layoutY="-17.0" prefHeight="72.0" prefWidth="72.0" scaleX="1.5" scaleY="1.5" translateY="25.0" visible="false">
+                     <effect>
+                        <ColorAdjust brightness="0.31" contrast="0.24" />
+                     </effect>
+                  </ProgressIndicator>
+                  <Label alignment="CENTER" layoutX="80.0" layoutY="79.0" prefHeight="36.0" prefWidth="193.0" style="-fx-background-color: WHITE;" textAlignment="CENTER" textFill="WHITE" translateX="-2.0" translateY="25.0">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="showResults" disable="true" layoutX="132.0" layoutY="165.0" mnemonicParsing="false" onAction="#showResults" prefHeight="35.0" prefWidth="85.0" styleClass="actionBtn" text="Results" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <ScrollPane fx:id="resultList" focusTraversable="false" layoutY="340.0" prefHeight="190.0" prefWidth="348.0" style="-fx-focus-color: transparent;" translateY="-1.0" visible="false" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="341.0">
+         <content>
+            <VBox fx:id="list" minHeight="188.0" minWidth="348.0" style="-fx-background-color: WHITE; -fx-focus-color: transparent;">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

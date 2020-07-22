@@ -1,0 +1,56 @@
+#nav{
+	
+	-fx-background-color: #fff;
+	-fx-background-insets: 0 0 5 0;
+}
+
+.navBtn{
+	
+	-fx-background-color: transparent;
+}
+
+.navBtn:hover{
+	
+	-fx-background-color: #eee;
+	-fx-cursor: hand;
+}
+
+#scene{
+	
+	-fx-background-image: url("images/paisaje.jpg");
+	-fx-background-size: cover;
+}
+
+#searchPane{
+	
+	-fx-background-color: #fff;	
+}
+
+.panelAccion{
+	
+	-fx-background-color: rgb(255, 255, 255, .9);
+	-fx-background-radius: 5px;
+	-fx-background-insets: 12;
+}
+
+.info{
+	
+	-fx-background-color: rgb(255, 255, 255, .9);
+	-fx-background-radius: 5px;
+	
+}
+
+#indicadorOn{
+	
+	-fx-scale-x: 3;
+	-fx-scale-y: 3;
+}
+
+.actionBtn{
+	-fx-background-color: rgb(67, 190, 222);
+}
+
+.actionBtn:hover{
+	-fx-background-color: rgb(67, 190, 240);
+	-fx-cursor: hand ;
+}

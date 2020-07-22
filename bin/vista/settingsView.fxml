@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="595.0" prefWidth="350.0" style="-fx-background-color: rgb(67, 190, 255);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.SettingsController">
+   <children>
+      <GridPane layoutX="1.0" prefHeight="595.0" prefWidth="350.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="59.0" minHeight="64.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="59.0" minHeight="65.5" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="59.0" minHeight="65.5" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="59.0" minHeight="65.5" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="59.0" minHeight="65.5" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="59.0" minHeight="65.5" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="59.0" minHeight="65.5" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="59.0" minHeight="65.5" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="66.0" minHeight="69.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+        </rowConstraints>
+         <children>
+            <Pane maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="350.0" style="-fx-background-color: rgb(67, 190, 255);" GridPane.columnSpan="5">
+               <children>
+                  <Label layoutY="15.0" text="Settings" textFill="#ffffffd9">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Label>
+                  <FontAwesomeIconView fx:id="warnings" fill="#ffffffd9" glyphName="WARNING" layoutX="298.0" layoutY="41.0" onMouseClicked="#showWarnings" size="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </FontAwesomeIconView>
+                  <Label fx:id="warningNumber" alignment="CENTER" layoutX="314.0" layoutY="13.0" prefHeight="15.0" prefWidth="16.0" style="-fx-background-color: ORANGE; -fx-background-radius: 8;" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnSpan="5" GridPane.rowIndex="1" GridPane.rowSpan="4">
+               <children>
+                  <Label alignment="CENTER" layoutX="32.0" layoutY="36.0" prefHeight="60.0" prefWidth="287.0" text="Aqui se visualizarán posibles confictos que ocurran durante los analisis." textAlignment="CENTER" textFill="#00000066" wrapText="true" />
+                  <ScrollPane fx:id="warningPane" prefHeight="131.0" prefWidth="350.0" style="-fx-background-color: WHITE;" visible="false">
+                     <content>
+                        <VBox fx:id="warningList" minHeight="129.0" minWidth="348.0" style="-fx-background-color: WHITE;">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <Label layoutY="132.0" prefHeight="46.0" prefWidth="350.0" style="-fx-background-color: #eee;" text="History" textFill="#000000b2">
+                     <font>
+                        <Font name="Segoe UI" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Label>
+                  <Pane layoutY="177.0" prefHeight="2.0" prefWidth="350.0" style="-fx-background-color: lightgrey;" />
+                  <Label layoutX="33.0" layoutY="198.0" text="Tests completed" textFill="#000000b2">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="48.0" layoutY="225.0" text="Files analyzed" textFill="#000000b2">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalTests" layoutX="153.0" layoutY="198.0" textFill="#000000b2">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalFiles" layoutX="153.0" layoutY="225.0" textFill="#000000b2">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="cleanHistory" layoutX="269.0" layoutY="220.0" mnemonicParsing="false" onAction="#cleanHistory" styleClass="actionBtn" text="Clean" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+               </children></Pane>
+            <Pane prefHeight="400.0" prefWidth="191.0" style="-fx-background-color: white;" GridPane.columnSpan="5" GridPane.rowIndex="5" GridPane.rowSpan="5">
+               <children>
+                  <Label layoutY="-1.0" prefHeight="46.0" prefWidth="350.0" style="-fx-background-color: #eee;" text="Paths to analyze" textFill="#000000b2">
+                     <font>
+                        <Font name="Segoe UI" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Label>
+                  <Pane layoutY="44.0" prefHeight="2.0" prefWidth="350.0" style="-fx-background-color: lightgrey;" />
+                  <ScrollPane layoutY="46.0" prefHeight="160.0" prefWidth="350.0" style="-fx-background-color: WHITE;">
+                     <content>
+                        <VBox fx:id="pathList" minHeight="158.0" minWidth="348.0" style="-fx-background-color: WHITE;">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <Button fx:id="remove" layoutX="130.0" layoutY="220.0" mnemonicParsing="false" onAction="#removePaths" prefHeight="35.0" prefWidth="90.0" styleClass="actionBtn" text="Remove" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
