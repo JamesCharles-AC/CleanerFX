@@ -16,3 +16,8 @@ JavaFX 8<br/>
 SceneBuilder 11<br/>
 
 
+## Problemas
+
+Pues ahora mismo soy incapaz de modificar la interfaz por trastear con JDK 14. SceneBuilder se resiste a abrir el **fxml** principal, de modo que si lo arreglo ya haré modificaciones.
+
+
