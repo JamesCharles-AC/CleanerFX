@@ -71,7 +71,7 @@
                         <Font size="10.0" />
                      </font>
                   </Label>
-                  <Button fx:id="about" layoutX="940.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="60.0" styleClass="navBtn">
+                  <Button fx:id="about" layoutX="940.0" layoutY="-1.0" mnemonicParsing="false" onAction="#openURI" prefHeight="55.0" prefWidth="60.0" styleClass="navBtn">
                      <graphic>
                         <MaterialDesignIconView fill="#00000099" glyphName="HELP" size="22" />
                      </graphic>

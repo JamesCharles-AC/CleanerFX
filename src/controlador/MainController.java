@@ -1,6 +1,8 @@
 package controlador;
 
+import java.awt.Desktop;
 import java.io.File;
+import java.net.URI;
 import java.util.ArrayList;
 
 import application.Main;
@@ -256,6 +258,22 @@ public class MainController{
 		this.contentOptions.setVisible(  this.contentOptions.isVisible() ? false:true   );
 
 		blendBackground();
+
+	}
+
+	
+	@FXML
+	private void openURI(ActionEvent event) {
+
+		if(Desktop.isDesktopSupported()){
+
+			try {
+				Desktop.getDesktop().browse(new URI("https://jamescharles-ac.github.io"));
+
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			} 
+		}
 
 	}
 

@@ -41,6 +41,7 @@ public class Main extends Application {
 			scene.getStylesheets().add("/vista/application.css");				// Aplico CSS
 
 			// Seteo la scene y la muestro
+			primaryStage.setTitle("CleanerFX v1.0");
 			primaryStage.setScene(scene);
 			primaryStage.setResizable( false );
 			primaryStage.sizeToScene();

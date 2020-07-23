@@ -8,8 +8,10 @@ import java.util.TreeMap;
 import application.Main;
 import controlador.SettingsController;
 import javafx.application.Platform;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 
 public class Analyzer implements Runnable{
 
@@ -246,11 +248,29 @@ public class Analyzer implements Runnable{
 	
 	
 	public void deleteFiles() {
-		
+				
+		int count = 0;
 		
 		for( File f : this.archivos.keySet()) {
 			
 			f.delete();
+			count++;
+		}
+		
+		if(count > 0) {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Archivos eliminados");
+			alert.setHeaderText(null);
+			alert.setContentText("Todos los archivos han sido eliminados.");
+			alert.showAndWait();
+		}
+		
+		else if(count == 0) {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Sin archivos.");
+			alert.setHeaderText(null);
+			alert.setContentText("No hay archivos que eliminar.\nEjecuta un nuevo analisis o vuelve en unos dias.");
+			alert.showAndWait();
 		}
 		
 	}

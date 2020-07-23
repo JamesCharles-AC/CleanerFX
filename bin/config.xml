@@ -4,9 +4,12 @@
         <item>
             <path>C:\Users\Public\Downloads</path>
         </item>
+        <item>
+            <path>C:\Users\juanc\Downloads\Nueva carpeta</path>
+        </item>
     </pathList>
     <history>
-        <tests>0</tests>
-        <files>0</files>
+        <tests>7</tests>
+        <files>1002</files>
     </history>
 </config>
