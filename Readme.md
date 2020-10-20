@@ -12,6 +12,7 @@ Tras tener una versión utilizable y bonita la dejé a un lado para curiosear ot
 ## Requisitos
 
 Al clonar el repositorio debe usarse JDK y JavaFX 8 en el BuildPath, además de comprobar que se usa el compilador 1.8 de Java.
+No puede usarse con una version de java superior a JDK8 (no he testeado con JRE).
 
 ## Instrucciones
 
