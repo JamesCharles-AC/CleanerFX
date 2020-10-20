@@ -268,7 +268,7 @@ public class MainController{
 		if(Desktop.isDesktopSupported()){
 
 			try {
-				Desktop.getDesktop().browse(new URI("https://jamescharles-ac.github.io"));
+				Desktop.getDesktop().browse(new URI("https://github.com/JamesCharles-AC/CleanerFX"));
 
 			} catch (Exception e1) {
 				e1.printStackTrace();
